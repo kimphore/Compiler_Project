@@ -22,17 +22,17 @@ public class Obfuscator {
 		 * Obfuscator Func
 		 */
 		
-		Renamer p = new Renamer();
+		//Renamer p = new Renamer();
+		//
+		//p.ExcuteMethodRename(cg);
+		//p.ExcuteFieldRename(cg);
+
+		IntegerEncryptor ee = new IntegerEncryptor();
 		
-		p.ExcuteMethodRename(cg);
-		p.ExcuteFieldRename(cg);
-		
-		BranchAdder ba = new BranchAdder();
-		
-		ba.ExcuteBrandAdder(cg);
+		ee.ExcuteEncryption(cg);
 		
 		try {
-			cg.getJavaClass().dump("AfterClass.class");
+			cg.getJavaClass().dump("Test.class");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
